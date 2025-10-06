@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D'Assise Déco - Luxury Furniture & Home Decor</title>
+    <description>Latest products and updates from D'Assise Déco</description>
+    <link>https://dassisedeco.lovable.app</link>
+    <atom:link href="https://dassisedeco.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Elegant Wall Mirror & Console</title>
+      <description>Transform your entryway with our stunning wall mirror and floating console combination</description>
+      <link>https://dassisedeco.lovable.app/gallery</link>
+      <pubDate>Sun, 06 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Modern TV Entertainment Unit</title>
+      <description>Luxury marble and wood TV unit with LED lighting and premium finishes</description>
+      <link>https://dassisedeco.lovable.app/gallery</link>
+      <pubDate>Sun, 06 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
