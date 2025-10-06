@@ -1,9 +1,20 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Award, Users, Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+
+// Import dynamic hero images
+import diningSetImg from "@/assets/products/dining-set.jpg";
+import modernKitchenImg from "@/assets/products/modern-kitchen.jpg";
+import diamondShelfImg from "@/assets/products/diamond-wall-shelf.jpg";
 
 const About = () => {
+  const { t } = useTranslation();
+  const heroImages = [diningSetImg, modernKitchenImg, diamondShelfImg];
+  const [currentHeroImage] = useState(heroImages[Math.floor(Math.random() * heroImages.length)]);
+  
   const values = [
     {
       icon: Award,
@@ -31,15 +42,23 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-muted/30 to-background py-20 md:py-32">
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Dynamic Background */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={currentHeroImage}
+            alt="About Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-              About <span className="gold-gradient-text">D'Assise Déco</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
+              <span className="gold-gradient-text">D'Assise Déco</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Creating beautiful living spaces through exceptional furniture and timeless design
+            <p className="text-xl text-white/90 leading-relaxed drop-shadow">
+              {t('about.description')}
             </p>
           </div>
         </div>

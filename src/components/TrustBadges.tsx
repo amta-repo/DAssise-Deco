@@ -1,26 +1,29 @@
 import { Shield, Truck, Award, HeadphonesIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const TrustBadges = () => {
+  const { t } = useTranslation();
+  
   const badges = [
     {
       icon: Shield,
-      title: "Secure Payment",
-      description: "100% secure transactions"
+      title: t('trust.securePayment'),
+      description: t('trust.secureDesc')
     },
     {
       icon: Truck,
-      title: "Free Delivery",
-      description: "On orders over 500K CFA"
+      title: t('trust.freeDelivery'),
+      description: t('trust.freeDesc')
     },
     {
       icon: Award,
-      title: "Quality Guaranteed",
-      description: "Premium materials only"
+      title: t('trust.quality'),
+      description: t('trust.qualityDesc')
     },
     {
       icon: HeadphonesIcon,
-      title: "24/7 Support",
-      description: "Always here to help"
+      title: t('trust.support'),
+      description: t('trust.supportDesc')
     }
   ];
 

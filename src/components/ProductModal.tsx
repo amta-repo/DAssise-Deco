@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Star, ShoppingCart, Check } from "lucide-react";
 import type { Product } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 interface ProductModalProps {
   product: Product | null;
@@ -16,6 +17,8 @@ interface ProductModalProps {
 }
 
 const ProductModal = ({ product, open, onOpenChange }: ProductModalProps) => {
+  const { t } = useTranslation();
+  
   if (!product) return null;
 
   const handleBuyNow = () => {
@@ -56,7 +59,7 @@ const ProductModal = ({ product, open, onOpenChange }: ProductModalProps) => {
                 ))}
               </div>
               <span className="text-sm text-muted-foreground">
-                {product.rating} ({product.reviews} reviews)
+                {product.rating} ({product.reviews} {t('product.reviews')})
               </span>
             </div>
           </div>
@@ -68,7 +71,7 @@ const ProductModal = ({ product, open, onOpenChange }: ProductModalProps) => {
             </div>
 
             <div>
-              <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+              <h4 className="font-semibold text-lg mb-3">{t('product.features')}:</h4>
               <ul className="space-y-2">
                 {product.features.map((feature, index) => (
                   <li key={index} className="flex items-start space-x-2">
@@ -85,11 +88,11 @@ const ProductModal = ({ product, open, onOpenChange }: ProductModalProps) => {
               onClick={handleBuyNow}
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
-              Buy Now via WhatsApp
+              {t('product.buyNow')} - {product.price}
             </Button>
 
             <p className="text-sm text-muted-foreground text-center">
-              Click "Buy Now" to chat with us on WhatsApp for instant ordering and delivery details.
+              {t('product.viewDetails')}
             </p>
           </div>
         </div>

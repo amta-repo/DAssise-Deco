@@ -2,6 +2,7 @@ import { Star, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { Product } from "@/data/products";
+import { useTranslation } from "react-i18next";
 
 interface ProductCardProps {
   product: Product;
@@ -9,6 +10,8 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
+  const { t } = useTranslation();
+  
   const handleBuyNow = () => {
     const message = `Hello! I'm interested in the ${product.name} (${product.price}). Can you provide more details?`;
     const whatsappUrl = `https://wa.me/22961206674?text=${encodeURIComponent(message)}`;
@@ -48,7 +51,7 @@ const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
             ))}
           </div>
           <span className="text-sm text-muted-foreground">
-            {product.rating} ({product.reviews} reviews)
+            {product.rating} ({product.reviews} {t('product.reviews')})
           </span>
         </div>
 
@@ -58,14 +61,14 @@ const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
             className="flex-1"
             onClick={onLearnMore}
           >
-            Learn More
+            {t('product.learnMore')}
           </Button>
           <Button
             className="flex-1 bg-primary hover:bg-primary-dark"
             onClick={handleBuyNow}
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
-            Buy Now
+            {t('product.buyNow')}
           </Button>
         </div>
       </div>

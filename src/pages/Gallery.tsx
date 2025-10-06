@@ -6,11 +6,20 @@ import ProductModal from "@/components/ProductModal";
 import { products } from "@/data/products";
 import type { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+
+// Import dynamic hero images for variety
+import designerBedroomImg from "@/assets/products/designer-bedroom-set.jpg";
+import hotelBedroomImg from "@/assets/products/hotel-bedroom-set.jpg";
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  
+  const heroImages = [designerBedroomImg, hotelBedroomImg];
+  const [currentHeroImage] = useState(heroImages[Math.floor(Math.random() * heroImages.length)]);
 
   const handleLearnMore = (product: Product) => {
     setSelectedProduct(product);
@@ -18,6 +27,11 @@ const Gallery = () => {
   };
 
   const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
+  
+  const getCategoryTranslation = (category: string) => {
+    if (category === "All") return t('gallery.all');
+    return t(`categories.${category}`, category);
+  };
 
   const filteredProducts = selectedCategory === "All" 
     ? products 
@@ -27,15 +41,23 @@ const Gallery = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Dynamic Background */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={currentHeroImage}
+            alt="Gallery Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Our Complete Collection
+            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+              {t('gallery.title')}
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Browse through our extensive range of luxury furniture and home décor pieces
+            <p className="text-lg text-white/90 drop-shadow">
+              {t('gallery.description')}
             </p>
           </div>
         </div>
@@ -52,7 +74,7 @@ const Gallery = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={selectedCategory === category ? "bg-primary hover:bg-primary-dark" : ""}
               >
-                {category}
+                {getCategoryTranslation(category)}
               </Button>
             ))}
           </div>
@@ -75,7 +97,7 @@ const Gallery = () => {
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
               <p className="text-muted-foreground text-lg">
-                No products found in this category.
+                {t('gallery.noProducts')}
               </p>
             </div>
           )}

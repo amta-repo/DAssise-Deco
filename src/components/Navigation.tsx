@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "./LanguageToggle";
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -20,30 +23,41 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
-              Home
+              {t('nav.home')}
             </Link>
             <Link to="/gallery" className="text-foreground hover:text-primary transition-colors">
-              Gallery
+              {t('nav.gallery')}
             </Link>
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">
-              About Us
+              {t('nav.about')}
             </Link>
-            <a 
-              href="tel:+2290161206674" 
-              className="flex items-center space-x-2 text-primary hover:text-primary-dark transition-colors"
+            <Button 
+              variant="ghost"
+              onClick={() => window.location.href = 'tel:+2290161206674'}
+              className="text-primary hover:text-primary-dark"
             >
-              <Phone className="w-4 h-4" />
-              <span className="font-semibold">+229 016 120 6674</span>
-            </a>
+              {t('footer.callNow')}
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => window.open('https://wa.me/22961206674', '_blank')}
+              className="text-primary hover:text-primary-dark"
+            >
+              {t('footer.whatsapp')}
+            </Button>
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
+            <button
+              className="text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -54,29 +68,36 @@ const Navigation = () => {
               className="block text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link 
               to="/gallery" 
               className="block text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Gallery
+              {t('nav.gallery')}
             </Link>
             <Link 
               to="/about" 
               className="block text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About Us
+              {t('nav.about')}
             </Link>
-            <a 
-              href="tel:+2290161206674" 
-              className="flex items-center space-x-2 text-primary"
+            <Button 
+              variant="ghost"
+              onClick={() => window.location.href = 'tel:+2290161206674'}
+              className="w-full justify-start text-primary"
             >
-              <Phone className="w-4 h-4" />
-              <span className="font-semibold">+229 016 120 6674</span>
-            </a>
+              {t('footer.callNow')}
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => window.open('https://wa.me/22961206674', '_blank')}
+              className="w-full justify-start text-primary"
+            >
+              {t('footer.whatsapp')}
+            </Button>
           </div>
         )}
       </div>
