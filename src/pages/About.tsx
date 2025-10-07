@@ -17,23 +17,23 @@ const About = () => {
   const values = [
     {
       icon: Award,
-      title: "Quality Excellence",
-      description: "We source only the finest materials and work with skilled craftsmen to ensure every piece meets our exacting standards."
+      titleKey: "qualityTitle",
+      descKey: "qualityDesc"
     },
     {
       icon: Users,
-      title: "Customer First",
-      description: "Your satisfaction is our priority. We provide personalized service and support throughout your furniture journey."
+      titleKey: "customerTitle",
+      descKey: "customerDesc"
     },
     {
       icon: Heart,
-      title: "Passion for Design",
-      description: "We love what we do and it shows in every carefully curated piece in our collection."
+      titleKey: "passionTitle",
+      descKey: "passionDesc"
     },
     {
       icon: Sparkles,
-      title: "Timeless Elegance",
-      description: "Our furniture combines contemporary aesthetics with classic design principles for lasting beauty."
+      titleKey: "eleganceTitle",
+      descKey: "eleganceDesc"
     }
   ];
 
@@ -69,29 +69,21 @@ const About = () => {
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Story
+                {t('about.title')}
               </h2>
             </div>
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                D'Assise Déco was born from a passion for transforming houses into homes. We believe 
-                that furniture is more than just functional pieces – it's an expression of your 
-                personality, style, and the life you want to live.
+                {t('about.story1')}
               </p>
 
               <p className="text-lg leading-relaxed">
-                Our journey began with a simple mission: to make luxury furniture accessible to those 
-                who appreciate quality craftsmanship and timeless design. Today, we're proud to offer 
-                a carefully curated collection of bedroom sets, living room furniture, dining pieces, 
-                and decorative items that elevate any space.
+                {t('about.story2')}
               </p>
 
               <p className="text-lg leading-relaxed">
-                Every product in our collection is selected with care, ensuring it meets our high 
-                standards for quality, aesthetics, and functionality. We work directly with skilled 
-                craftsmen and trusted manufacturers to bring you furniture that will last for years 
-                to come.
+                {t('about.story3')}
               </p>
             </div>
           </div>
@@ -103,10 +95,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Values
+              {t('about.valuesTitle')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do
+              {t('about.valuesDesc')}
             </p>
           </div>
 
@@ -116,8 +108,8 @@ const About = () => {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
                   <value.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <h3 className="text-xl font-semibold text-foreground">{t(`about.${value.titleKey}`)}</h3>
+                <p className="text-muted-foreground">{t(`about.${value.descKey}`)}</p>
               </div>
             ))}
           </div>
@@ -129,21 +121,20 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Ready to Transform Your Space?
+              {t('about.ctaTitle')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Let's work together to create the home of your dreams. Browse our collection or 
-              get in touch for personalized recommendations.
+              {t('about.ctaDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/gallery">
                 <Button size="lg" className="bg-primary hover:bg-primary-dark text-lg px-8 py-6">
-                  View Our Gallery
+                  {t('about.viewGallery')}
                 </Button>
               </a>
               <a href="https://wa.me/22961206674" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                  Contact Us on WhatsApp
+                  {t('about.contactWhatsapp')}
                 </Button>
               </a>
             </div>

@@ -19,7 +19,7 @@ const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
   };
 
   return (
-    <Card className="elegant-card overflow-hidden group">
+    <Card className="elegant-card overflow-hidden group flex flex-col h-full">
       <div className="relative overflow-hidden aspect-[4/3]">
         <img
           src={product.image}
@@ -31,13 +31,13 @@ const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
         </div>
       </div>
       
-      <div className="p-6 space-y-4">
-        <div>
-          <h3 className="text-xl font-semibold text-foreground mb-2">{product.name}</h3>
+      <div className="p-6 flex flex-col flex-grow space-y-4">
+        <div className="flex-grow">
+          <h3 className="text-xl font-semibold text-foreground mb-2 line-clamp-2">{product.name}</h3>
           <p className="text-sm text-muted-foreground">{product.category}</p>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 flex-wrap">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
               <Star
@@ -50,21 +50,21 @@ const ProductCard = ({ product, onLearnMore }: ProductCardProps) => {
               />
             ))}
           </div>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-sm text-muted-foreground whitespace-nowrap">
             {product.rating} ({product.reviews} {t('product.reviews')})
           </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex flex-col gap-2 pt-2">
           <Button
             variant="outline"
-            className="flex-1"
+            className="w-full"
             onClick={onLearnMore}
           >
             {t('product.learnMore')}
           </Button>
           <Button
-            className="flex-1 bg-primary hover:bg-primary-dark"
+            className="w-full bg-primary hover:bg-primary-dark"
             onClick={handleBuyNow}
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
