@@ -18,7 +18,7 @@ export const products: Product[] = [
     price: "450,000 CFA",
     rating: 4.9,
     reviews: 28,
-    image: "/src/assets/products/wall-mirror-console.jpg",
+    image: "/images/products/wall-mirror-console.jpg",
     category: "Entryway & Decor",
     features: [
       "Gold-framed round mirror",
@@ -35,7 +35,7 @@ export const products: Product[] = [
     price: "850,000 CFA",
     rating: 5.0,
     reviews: 42,
-    image: "/src/assets/products/tv-entertainment-unit.jpg",
+    image: "/images/products/tv-entertainment-unit.jpg",
     category: "Living Room",
     features: [
       "Marble accent wall panel",
@@ -52,7 +52,7 @@ export const products: Product[] = [
     price: "720,000 CFA",
     rating: 4.8,
     reviews: 35,
-    image: "/src/assets/products/dining-set.jpg",
+    image: "/images/products/dining-set.jpg",
     category: "Dining Room",
     features: [
       "Distressed wood table top",
@@ -69,7 +69,7 @@ export const products: Product[] = [
     price: "680,000 CFA",
     rating: 4.9,
     reviews: 51,
-    image: "/src/assets/products/luxury-platform-bed.jpg",
+    image: "/images/products/luxury-platform-bed.jpg",
     category: "Bedroom",
     features: [
       "Low-profile platform design",
@@ -86,7 +86,7 @@ export const products: Product[] = [
     price: "920,000 CFA",
     rating: 4.7,
     reviews: 29,
-    image: "/src/assets/products/hotel-bedroom-set.jpg",
+    image: "/images/products/hotel-bedroom-set.jpg",
     category: "Bedroom",
     features: [
       "Twin bed configuration",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     price: "1,450,000 CFA",
     rating: 5.0,
     reviews: 18,
-    image: "/src/assets/products/modern-kitchen.jpg",
+    image: "/images/products/modern-kitchen.jpg",
     category: "Kitchen",
     features: [
       "Two-tone wood cabinetry",
@@ -120,7 +120,7 @@ export const products: Product[] = [
     price: "185,000 CFA",
     rating: 4.6,
     reviews: 67,
-    image: "/src/assets/products/diamond-wall-shelf.jpg",
+    image: "/images/products/diamond-wall-shelf.jpg",
     category: "Decor & Storage",
     features: [
       "Geometric diamond design",
@@ -137,7 +137,7 @@ export const products: Product[] = [
     price: "795,000 CFA",
     rating: 4.8,
     reviews: 44,
-    image: "/src/assets/products/designer-bedroom-set.jpg",
+    image: "/images/products/designer-bedroom-set.jpg",
     category: "Bedroom",
     features: [
       "Platform bed with storage",
@@ -154,7 +154,7 @@ export const products: Product[] = [
     price: "680,000 CFA",
     rating: 4.9,
     reviews: 32,
-    image: "/src/assets/products/modern-tv-wall-unit.jpg",
+    image: "/images/products/modern-tv-wall-unit.jpg",
     category: "Living Room",
     features: [
       "Panneau texturé en bois",
@@ -171,7 +171,7 @@ export const products: Product[] = [
     price: "520,000 CFA",
     rating: 4.7,
     reviews: 28,
-    image: "/src/assets/products/curved-vanity-desk.jpg",
+    image: "/images/products/curved-vanity-desk.jpg",
     category: "Bedroom",
     features: [
       "Design courbe unique",
@@ -188,7 +188,7 @@ export const products: Product[] = [
     price: "380,000 CFA",
     rating: 4.6,
     reviews: 41,
-    image: "/src/assets/products/office-desk.jpg",
+    image: "/images/products/office-desk.jpg",
     category: "Office",
     features: [
       "Finition bois naturel",
@@ -205,7 +205,7 @@ export const products: Product[] = [
     price: "295,000 CFA",
     rating: 4.8,
     reviews: 36,
-    image: "/src/assets/products/glass-coffee-table.jpg",
+    image: "/images/products/glass-coffee-table.jpg",
     category: "Living Room",
     features: [
       "Plateau en verre trempé",
@@ -222,7 +222,7 @@ export const products: Product[] = [
     price: "220,000 CFA",
     rating: 4.7,
     reviews: 52,
-    image: "/src/assets/products/wood-display-shelf.jpg",
+    image: "/images/products/wood-display-shelf.jpg",
     category: "Decor & Storage",
     features: [
       "Compartiments multiples",
@@ -239,7 +239,7 @@ export const products: Product[] = [
     price: "340,000 CFA",
     rating: 4.5,
     reviews: 25,
-    image: "/src/assets/products/white-wine-rack.jpg",
+    image: "/images/products/white-wine-rack.jpg",
     category: "Wine Storage",
     features: [
       "Finition blanche moderne",
@@ -256,7 +256,7 @@ export const products: Product[] = [
     price: "365,000 CFA",
     rating: 4.6,
     reviews: 31,
-    image: "/src/assets/products/wood-wine-rack.jpg",
+    image: "/images/products/wood-wine-rack.jpg",
     category: "Wine Storage",
     features: [
       "Bois naturel premium",

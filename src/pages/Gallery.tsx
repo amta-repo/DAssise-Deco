@@ -8,17 +8,16 @@ import type { Product } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
-// Import dynamic hero images for variety
-import designerBedroomImg from "@/assets/products/designer-bedroom-set.jpg";
-import hotelBedroomImg from "@/assets/products/hotel-bedroom-set.jpg";
-
 const Gallery = () => {
   const { t } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   
-  const heroImages = [designerBedroomImg, hotelBedroomImg];
+  const heroImages = [
+    "/images/products/designer-bedroom-set.jpg",
+    "/images/products/hotel-bedroom-set.jpg"
+  ];
   const [currentHeroImage] = useState(heroImages[Math.floor(Math.random() * heroImages.length)]);
 
   const handleLearnMore = (product: Product) => {

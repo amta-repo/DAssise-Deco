@@ -12,19 +12,18 @@ import { products } from "@/data/products";
 import type { Product } from "@/data/products";
 import { useTranslation } from "react-i18next";
 
-// Import hero images
-import wallMirrorImg from "@/assets/products/wall-mirror-console.jpg";
-import tvUnitImg from "@/assets/products/tv-entertainment-unit.jpg";
-import diningSetImg from "@/assets/products/dining-set.jpg";
-import platformBedImg from "@/assets/products/luxury-platform-bed.jpg";
-import kitchenImg from "@/assets/products/modern-kitchen.jpg";
-
 const Index = () => {
   const { t } = useTranslation();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   
-  const heroImages = [wallMirrorImg, tvUnitImg, diningSetImg, platformBedImg, kitchenImg];
+  const heroImages = [
+    "/images/products/wall-mirror-console.jpg",
+    "/images/products/tv-entertainment-unit.jpg",
+    "/images/products/dining-set.jpg",
+    "/images/products/luxury-platform-bed.jpg",
+    "/images/products/modern-kitchen.jpg"
+  ];
 
   const handleLearnMore = (product: Product) => {
     setSelectedProduct(product);

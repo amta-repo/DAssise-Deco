@@ -5,14 +5,13 @@ import { Award, Users, Heart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
-// Import dynamic hero images
-import diningSetImg from "@/assets/products/dining-set.jpg";
-import modernKitchenImg from "@/assets/products/modern-kitchen.jpg";
-import diamondShelfImg from "@/assets/products/diamond-wall-shelf.jpg";
-
 const About = () => {
   const { t } = useTranslation();
-  const heroImages = [diningSetImg, modernKitchenImg, diamondShelfImg];
+  const heroImages = [
+    "/images/products/dining-set.jpg",
+    "/images/products/modern-kitchen.jpg",
+    "/images/products/diamond-wall-shelf.jpg"
+  ];
   const [currentHeroImage] = useState(heroImages[Math.floor(Math.random() * heroImages.length)]);
   
   const values = [
